@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class MainPageComponent {
 
   addNewRecord(){
-    console.log('hey')
+    console.log('New Record Added')
   }
 }
