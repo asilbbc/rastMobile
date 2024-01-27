@@ -1,0 +1,39 @@
+.outerDiv {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+}
+
+.logoDiv {
+    width: 20%;
+    justify-content: center;
+    display: flex;
+}
+
+.navigationDiv {
+    width: 60%;
+    justify-content: center;
+    display: flex;
+}
+
+.navigationDiv a {
+    margin: 0 5%;
+    color: black;
+}
+
+.iconDiv {
+    width: 20%;
+    justify-content: center;
+    display: flex;
+}
+
+.iconDiv img {
+    height: 18px;
+    width: 18px;
+    margin: 0 0.5rem;
+}
+
+ul {
+    display: flex;
+    width: 15%;
+}

@@ -1,0 +1,59 @@
+.outerDiv {
+    display: flex;
+}
+
+.centerDiv {
+    background-color: #EFF2FF;
+    width: calc(100vw - 10%);
+    height: calc(100vh - 10%);
+    margin: auto;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+}
+
+.searchInputDiv {
+    width: 25rem;
+    display: flex;
+    height: 35px;
+}
+
+.searchInput {
+    width: 95%;
+    height: 35px;
+    border-radius: 25px;
+    padding: 0 2rem;
+}
+
+.searchButton {
+    background-color: #744BFC;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: -7%
+}
+
+.filterButton {
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 2%;
+}
+
+.newRecordDiv {
+    height: 35px;
+}
+
+.newRecordButton {
+    background-color: #744BFC;
+    border-radius: 25px;
+    height: 35px;
+    width: 10rem;
+}
+
+.paginationBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+}

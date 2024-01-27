@@ -1,0 +1,15 @@
+<div class="outerDiv">
+    <div class="logoDiv">
+        <img src="../../../../assets/images/logo.png">
+    </div>
+    <div class="navigationDiv">
+        <ul *ngFor="let header of headerElements">
+            <a mat-fab extended (click)="changeRoute(header.route)">{{header.pageName}}</a>
+        </ul>
+    </div>
+    <div class="iconDiv">
+        <a href="/"><img src="../../../../assets/images/youtube.png"></a>
+        <a href="/"><img src="../../../../assets/images/setting.png"></a>
+        <a href="/"><img src="../../../../assets/images/be.png"></a>
+        <a href="/"><img src="../../../../assets/images/linkedIn.png"></a>
+</div>
