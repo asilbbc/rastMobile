@@ -6,6 +6,7 @@
     background-color: #EFF2FF;
     width: calc(100vw - 10%);
     height: calc(100vh - 10%);
+    min-height: calc(100vh - 10rem);
     margin: auto;
 }
 
@@ -52,8 +53,97 @@
     width: 100%;
 }
 
+.tableDiv {
+    display: grid;
+    margin: auto;
+    margin-top: -2%;
+    width: 95%;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: start;
+    height: 4rem;
+    border-right: 1px solid #744BFC;
+    border-left: 1px solid #744BFC;
+}
+
+table {
+    border: 1px solid #744BFC;
+}
+
+th {
+    border-bottom: 1px solid #744BFC;
+}
+
+tr,
+th,
+td {
+    /* border: 1px solid black; */
+    border-collapse: separate;
+    padding: 0 3%;
+}
+
+table tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+table tr:nth-child(even) {
+    background-color: #EFF2FF;
+}
+
+
 .paginationBar {
     display: flex;
     justify-content: space-between;
     margin: 3%;
+}
+
+.leftDiv span {
+    color: #744BFC;
+}
+
+.leftDiv select {
+    height: 35px;
+    border-radius: 25px;
+    margin-left: 2rem;
+    width: 6rem;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+}
+
+.pagination a {
+    color: #744BFC;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination span {
+    align-items: center;
+    display: flex;
+    margin: 10px;
+}
+
+.pagination input {
+    width: 2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
 }
