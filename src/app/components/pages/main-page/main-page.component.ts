@@ -1,16 +1,25 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SocialMedia } from '../../dataTypes/socialMedia.model';
+import { SocialMediaService } from '../../services/socialMediaService/socialMedia.service';
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
 
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
   constructor(
-    public modalService: NgbModal
+    public modalService: NgbModal,
+    private socialMediaService: SocialMediaService
   ) {
+  }
+
+  ngOnInit() {
+    // get data from web service
+    //this.socialMediaService.getSocialMediaData(); random created web service for example
   }
 
   @ViewChild('content') content!: ElementRef;
@@ -36,13 +45,19 @@ export class MainPageComponent {
 
   //save new record
   addNewRecord() {
-    const data = {
-      socialMediaLink: this.newRecordForm.value.socialMediaLink,
-      socialMediaName: this.newRecordForm.value.socialMediaName,
-      description: this.newRecordForm.value.description
+    let data: SocialMedia = {
+      socialMediaLink: this.newRecordForm.value.socialMediaLink!,
+      socialMediaName: this.newRecordForm.value.socialMediaName!,
+      description: this.newRecordForm.value.description!
     }
     this.tableData.push(data)
 
+    this.newRecordForm.reset()
     this.modalService.dismissAll()
+
+    // post data to web service / random web service created for example
+    // this.socialMediaService.addSocialMediaData(data).subscribe((result) => {
+    //   console.log(result)
+    // });
   }
 }
