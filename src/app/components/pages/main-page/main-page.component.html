@@ -8,7 +8,7 @@
                 <button class="filterButton" type="button"><i class="fa fa-filter primaryColor"></i></button>
             </div>
             <div class="newRecordDiv">
-                <button class="newRecordButton" type="button" (click)="open(content)">
+                <button class="newRecordButton" type="button" (click)="open()">
                     <i class="fa fa-plus white"> Yeni Hesap Ekle</i>
                 </button>
             </div>
@@ -62,7 +62,7 @@
         <div class="header">
             <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
         </div>
-        <form class="form" [formGroup]="newRecordForm" (ngSubmit)="submit(newRecordForm)">
+        <form class="form" [formGroup]="newRecordForm">
             <div>
                 <label>Sosyal Medya Linki</label>
                 <input type="text" name="socialMediaLink" formControlName="socialMediaLink">
@@ -78,7 +78,7 @@
         </form>
         <div class="footer">
             <button class="dismiss" type="button" (click)="modal.dismiss()">Vazgeç</button>
-            <button class="save button" type="submit" (click)="submit(newRecordForm)">Kaydet</button>
+            <button class="save button" type="submit" (click)="addNewRecord()">Kaydet</button>
         </div>
     </div>
 </ng-template>

@@ -1,16 +1,20 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal , NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
+
 export class MainPageComponent {
   constructor(
-    public modalService: NgbModal
+    public modalService: NgbModal,
+    public modalConfig : NgbModalConfig
   ) {
   }
+
+  @ViewChild('content') content!: ElementRef;
 
   newRecordForm = new FormGroup({
     socialMediaLink: new FormControl(''),
@@ -18,7 +22,7 @@ export class MainPageComponent {
     description: new FormControl('')
   });
 
-  //data examples
+  //data examples for table
   tableData: any = [
     { socialMediaLink: 'instagram.com/mobilerast', socialMediaName: 'intagram', description: 'We will help you to finish your development project successfully.' },
     { socialMediaLink: 'tr.linkendIn.com/mobilerast', socialMediaName: 'linkedIn', description: 'Hire vetted developers from Rast Mobile to scale up your tech projects.' },
@@ -27,8 +31,9 @@ export class MainPageComponent {
   ];
 
   //for opening the new record templete
-  open(content: TemplateRef<any>) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
+  open() {
+    this.modalService.open(this.content, { ariaLabelledBy: 'modal-basic-title' })
+    this.modalConfig.size = 'md'
   }
 
   //save new record
@@ -38,5 +43,7 @@ export class MainPageComponent {
       socialMediaName: this.newRecordForm.value.socialMediaName,
       description: this.newRecordForm.value.description
     }
+
+    console.log(data)
   }
 }
