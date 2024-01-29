@@ -1,6 +1,6 @@
-import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { NgbModal , NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -9,8 +9,7 @@ import { NgbModal , NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 
 export class MainPageComponent {
   constructor(
-    public modalService: NgbModal,
-    public modalConfig : NgbModalConfig
+    public modalService: NgbModal
   ) {
   }
 
@@ -33,7 +32,6 @@ export class MainPageComponent {
   //for opening the new record templete
   open() {
     this.modalService.open(this.content, { ariaLabelledBy: 'modal-basic-title' })
-    this.modalConfig.size = 'md'
   }
 
   //save new record
@@ -43,7 +41,8 @@ export class MainPageComponent {
       socialMediaName: this.newRecordForm.value.socialMediaName,
       description: this.newRecordForm.value.description
     }
+    this.tableData.push(data)
 
-    console.log(data)
+    this.modalService.dismissAll()
   }
 }
